@@ -89,6 +89,14 @@ version = "2.4.7"
 
 [[package]]
 category = "main"
+description = "Pure Python PNG image encoder/decoder"
+name = "pypng"
+optional = false
+python-versions = "*"
+version = "0.0.20"
+
+[[package]]
+category = "main"
 description = "Extensions to the standard Python datetime module"
 name = "python-dateutil"
 optional = false
@@ -151,7 +159,7 @@ dev = ["py-make (>=0.1.0)", "twine", "wheel"]
 telegram = ["requests"]
 
 [metadata]
-content-hash = "6f187fd64f9d5eb6289084affbc637f2b16a331ca85a4f454069677273da63b8"
+content-hash = "cb74ee65ad71fdd865c96d50439eeaa850b4254ea2c5c69a2a351a15dd912b70"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -310,6 +318,9 @@ pymupdf = [
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
     {file = "pyparsing-2.4.7.tar.gz", hash = "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"},
+]
+pypng = [
+    {file = "pypng-0.0.20.tar.gz", hash = "sha256:1032833440c91bafee38a42c38c02d00431b24c42927feb3e63b104d8550170b"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},

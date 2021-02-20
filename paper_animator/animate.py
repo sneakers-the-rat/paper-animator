@@ -4,6 +4,7 @@ from pathlib import Path
 from tqdm import tqdm
 
 from skvideo.io import FFmpegWriter
+import png
 
 import matplotlib
 matplotlib.use('Agg')
@@ -25,6 +26,12 @@ def animate_images(figures:typing.List[np.ndarray], out_file:Path, frame_dur=1, 
     writer.close()
 
     print('\nWriting complete!')
+
+def save_figs(figs, output_dir):
+    output_dir = Path(output_dir)
+    for i, fig in enumerate(figs):
+        png.from_array(np.reshape(fig, (-1, fig.shape[1]*3)), mode="RGB").save(str(output_dir / f"{i:03}.png"))
+
 
 
 

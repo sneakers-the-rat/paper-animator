@@ -17,7 +17,7 @@ def parse_args():
     parser.add_argument('--video_fps', type=int, help="fps of output video, default: %(default)s", default=30,required=False)
     parser.add_argument('--resolution', type=tuple, help="Resolution of plots, default: %(default)s", default=(1920,1080),required=False)
     parser.add_argument('--grid_shape', type=tuple, help="Manually override (rows,cols) of figure layout, default: %(default)s", default=None,required=False)
-    parser.add_argument('--cleanup', type=bool, help="Delete temporary folder after completion, default: %(default)s", default=True,required=False)
+    parser.add_argument('--dont_cleanup', action="store_true", help="Delete temporary folder after completion")
 
     return parser.parse_args()
 
@@ -40,12 +40,17 @@ def main():
     figs = animate.plot_img_dirs(temp_dir/'img', resolution=args.resolution, shape=args.grid_shape)
     animate.animate_images(figs, out_file=output_file, frame_dur=args.frame_duration, fps=args.video_fps)
 
-    if args.cleanup:
+    if args.dont_cleanup:
+        print(f"Temporary files left in {temp_dir}")
+        # write out the figs, they may want them
+        fig_dir = temp_dir / 'figs'
+        fig_dir.mkdir(exist_ok=True)
+        animate.save_figs(figs, fig_dir)
+
+    else:
         print(f'Removing temporary files in {temp_dir}')
         shutil.rmtree(temp_dir)
-    else:
-        print(f"Temporary files left in {temp_dir}")
-        
+
 
 
 # if __name__ == "__main__":
