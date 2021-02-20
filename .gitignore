@@ -1,0 +1,5 @@
+*.egg-info
+venv
+dist
+.DS_Store
+.idea

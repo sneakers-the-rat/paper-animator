@@ -1,0 +1,90 @@
+[[package]]
+category = "main"
+description = "Git Object Database"
+name = "gitdb"
+optional = false
+python-versions = ">=3.4"
+version = "4.0.5"
+
+[package.dependencies]
+smmap = ">=3.0.1,<4"
+
+[[package]]
+category = "main"
+description = "Python Git Library"
+name = "gitpython"
+optional = false
+python-versions = ">=3.4"
+version = "3.1.13"
+
+[package.dependencies]
+gitdb = ">=4.0.1,<5"
+
+[[package]]
+category = "main"
+description = "Python bindings for the PDF rendering library MuPDF"
+name = "pymupdf"
+optional = false
+python-versions = "*"
+version = "1.18.8"
+
+[[package]]
+category = "main"
+description = "A pure Python implementation of a sliding window memory map manager"
+name = "smmap"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "3.0.5"
+
+[[package]]
+category = "main"
+description = "Fast, Extensible Progress Meter"
+name = "tqdm"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+version = "4.57.0"
+
+[package.extras]
+dev = ["py-make (>=0.1.0)", "twine", "wheel"]
+telegram = ["requests"]
+
+[metadata]
+content-hash = "244adf91b36d67d83d5395f8f9c42a49b34c67acbda8b5e521298bc919190c63"
+python-versions = "^3.8"
+
+[metadata.files]
+gitdb = [
+    {file = "gitdb-4.0.5-py3-none-any.whl", hash = "sha256:91f36bfb1ab7949b3b40e23736db18231bf7593edada2ba5c3a174a7b23657ac"},
+    {file = "gitdb-4.0.5.tar.gz", hash = "sha256:c9e1f2d0db7ddb9a704c2a0217be31214e91a4fe1dea1efad19ae42ba0c285c9"},
+]
+gitpython = [
+    {file = "GitPython-3.1.13-py3-none-any.whl", hash = "sha256:c5347c81d232d9b8e7f47b68a83e5dc92e7952127133c5f2df9133f2c75a1b29"},
+    {file = "GitPython-3.1.13.tar.gz", hash = "sha256:8621a7e777e276a5ec838b59280ba5272dd144a18169c36c903d8b38b99f750a"},
+]
+pymupdf = [
+    {file = "PyMuPDF-1.18.8-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:9f57fd38e21e7f695f02b1081ba9a7a2a18f044404ac6987faf630d1823a3c4a"},
+    {file = "PyMuPDF-1.18.8-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:5de86397a740a441c3d56e4986e7eac70847cc74836bcb1df055f50deb4abaa2"},
+    {file = "PyMuPDF-1.18.8-cp36-cp36m-win32.whl", hash = "sha256:7669da9b57c8d64ef58490c029840e5f745f1f4e5a78fd3f2b0219ee7f4da002"},
+    {file = "PyMuPDF-1.18.8-cp36-cp36m-win_amd64.whl", hash = "sha256:46b0c7a4fad878bd182763e8947f7b2fbb6785a1820d8847a15dcee8ae62faaf"},
+    {file = "PyMuPDF-1.18.8-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:c8925a29f606b3451dd95b576346fe87b54e12898ed9df318744ccfa65da2043"},
+    {file = "PyMuPDF-1.18.8-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:fe3797a1154d8e4eeb416d539c84bc404930a6b57c2082d030f2d68e13eed9ed"},
+    {file = "PyMuPDF-1.18.8-cp37-cp37m-win32.whl", hash = "sha256:f912a743ce5d134e8080b8ea1801f410bd74c62faccda64c4ea0ff3b4729bed0"},
+    {file = "PyMuPDF-1.18.8-cp37-cp37m-win_amd64.whl", hash = "sha256:f9b9ad59c711fd7e67961843c029eebccf08b2eeb190d0316b00285b74a4c30a"},
+    {file = "PyMuPDF-1.18.8-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:a1d12a8b8c1afac24fed6cb3a069132c8cdba354e665f496e5f7640d2d442d74"},
+    {file = "PyMuPDF-1.18.8-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:b34b34dc2e74347848cd6b36c218493a93723aa7873d84163b4b952d8a461f74"},
+    {file = "PyMuPDF-1.18.8-cp38-cp38-win32.whl", hash = "sha256:157946f7d9a545fd84de6cd4051df3d1f0c8ebb1b4edd04e6c8552e40723f1ee"},
+    {file = "PyMuPDF-1.18.8-cp38-cp38-win_amd64.whl", hash = "sha256:380bc336bcc80b229697229742ac00761fe22dab8af57288a16421cc99886178"},
+    {file = "PyMuPDF-1.18.8-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:583a1da6661fe0ab6dbac2b22dacc472a31769f9d5cb54d3920e96d5f858ef1b"},
+    {file = "PyMuPDF-1.18.8-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:c87e1224eee5d4bb8544ae320d878e4f16f1a681a4229db75a37be329c295a96"},
+    {file = "PyMuPDF-1.18.8-cp39-cp39-win32.whl", hash = "sha256:c70d28046fa115e795f59f94085c89f25183072c65e5d9ee0337cc6000cf38d5"},
+    {file = "PyMuPDF-1.18.8-cp39-cp39-win_amd64.whl", hash = "sha256:d72e5e86bd2aa9a18e58d12cdf6eda81af0f1f8f2904d3d0defe7c5c5928380e"},
+    {file = "PyMuPDF-1.18.8.tar.gz", hash = "sha256:1947ddcb32fa2eec6d3e562bdd55a1f28642909e40203f0b5d112da003a51af0"},
+]
+smmap = [
+    {file = "smmap-3.0.5-py2.py3-none-any.whl", hash = "sha256:7bfcf367828031dc893530a29cb35eb8c8f2d7c8f2d0989354d75d24c8573714"},
+    {file = "smmap-3.0.5.tar.gz", hash = "sha256:84c2751ef3072d4f6b2785ec7ee40244c6f45eb934d9e543e2c51f1bd3d54c50"},
+]
+tqdm = [
+    {file = "tqdm-4.57.0-py2.py3-none-any.whl", hash = "sha256:70657337ec104eb4f3fb229285358f23f045433f6aea26846cdd55f0fd68945c"},
+    {file = "tqdm-4.57.0.tar.gz", hash = "sha256:65185676e9fdf20d154cffd1c5de8e39ef9696ff7e59fe0156b1b08e468736af"},
+]
