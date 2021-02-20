@@ -2,10 +2,14 @@
 name = "paper-animator"
 version = "0.0.1"
 description = "Animate a version-controlled PDF/LaTeX paper!"
+readme = "README.md"
 authors = ["sneakers-the-rat <JLSaunders987@gmail.com>"]
 license = "MPL-2.0"
 homepage = "https://github.com/sneakers-the-rat/paper-animator"
 repository = "https://github.com/sneakers-the-rat/paper-animator"
+include = [
+    "img/paper.gif"
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
