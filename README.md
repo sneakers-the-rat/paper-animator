@@ -2,6 +2,8 @@
 
 Animate the progression of your version-controlled paper <3
 
+![Gif of an animated paper!](img/paper.gif)
+
 ## Installation
 
 ```
