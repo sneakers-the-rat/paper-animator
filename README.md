@@ -39,7 +39,8 @@ Use a repo that's not local! Give the file as a path relative to the root
 paper-animator subdirectory/paper.pdf --repo https://github.com/username/example_repo --branch main
 ```
 
-See `paper-animator --help` for all options
+See `paper-animator --help` for all options -- note that for arguments that are tuples, you must 
+pass them individually, eg `paper-animator --grid_shape 6 4` to pass a grid shape of `(6, 4)`
 
 ```
 $ paper-animator --help
@@ -70,3 +71,11 @@ optional arguments:
                         Manually override (rows,cols) of figure layout, default: None
   --dont_cleanup        Delete temporary folder after completion
 ```
+
+
+# Changelog
+
+## 0.0.2
+
+* Fixing taking tuple-based command line arguments!
+* `subdirs` was created in the wrong spot in `animate.plot_img_dirs` !

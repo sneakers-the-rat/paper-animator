@@ -1,9 +1,12 @@
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
 import argparse
 from pathlib import Path
 import shutil
 from paper_animator import animate, extract
+
+def tuple_int(arg_in):
+    return tuple([int(a) for a in arg_in])
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Convert a version controlled paper to a video!")
@@ -15,8 +18,8 @@ def parse_args():
     parser.add_argument('--latex_builder', help="if input is a latex file, which builder to use with latexmk, default: %(default)s", choices=['pdflatex', 'xetex'],required=False, default='pdflatex')
     parser.add_argument('--frame_duration', type=float, help="Duration (in s) to show each commit, default: %(default)s", default=1,required=False)
     parser.add_argument('--video_fps', type=int, help="fps of output video, default: %(default)s", default=30,required=False)
-    parser.add_argument('--resolution', type=tuple, help="Resolution of plots, default: %(default)s", default=(1920,1080),required=False)
-    parser.add_argument('--grid_shape', type=tuple, help="Manually override (rows,cols) of figure layout, default: %(default)s", default=None,required=False)
+    parser.add_argument('--resolution', nargs=2, help="Resolution of plots, default: %(default)s", default=(1920,1080),required=False)
+    parser.add_argument('--grid_shape', nargs=2, help="Manually override (rows,cols) of figure layout, default: %(default)s", default=None,required=False)
     parser.add_argument('--dont_cleanup', action="store_true", help="Delete temporary folder after completion")
 
     return parser.parse_args()
@@ -34,10 +37,18 @@ def main():
     else:
         output_file = Path(args.output)
 
+    # tuple-ize resolution and grid shape if present
+    if args.grid_shape is not None:
+        grid_shape = tuple_int(args.grid_shape)
+    else:
+        grid_shape = args.grid_shape
+
+    resolution = tuple_int(args.resolution)
+
 
     temp_dir = extract.extract_images(input_file, repo=args.repo, branch=args.branch,
                                      out_dir=args.tmp_dir, builder=args.latex_builder)
-    figs = animate.plot_img_dirs(temp_dir/'img', resolution=args.resolution, shape=args.grid_shape)
+    figs = animate.plot_img_dirs(temp_dir/'img', resolution=resolution, shape=grid_shape)
     animate.animate_images(figs, out_file=output_file, frame_dur=args.frame_duration, fps=args.video_fps)
 
     if args.dont_cleanup:

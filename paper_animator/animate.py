@@ -47,8 +47,8 @@ def plot_img_dirs(img_dir:Path, resolution=(1920,1080), shape=None):
             pass
 
     # iterate through folders, finding max images
+    subdirs = sorted([subdir for subdir in img_dir.iterdir() if subdir.is_dir()])
     if shape is None:
-        subdirs = sorted([subdir for subdir in img_dir.iterdir() if subdir.is_dir()])
         max_images = 0
         for subdir in subdirs:
             img_files = [img_file for img_file in subdir.iterdir() if img_file.suffix == '.png']
